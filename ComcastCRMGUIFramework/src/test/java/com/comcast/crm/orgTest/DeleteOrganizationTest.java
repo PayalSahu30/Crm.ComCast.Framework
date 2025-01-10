@@ -6,7 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.comcast.crm.ObjectRepositoryUtility.HomePage;
 import com.comcast.crm.ObjectRepositoryUtility.LoginPage;
+import com.comcast.crm.ObjectRepositoryUtility.OrganizationPage;
 import com.comcast.crm.generic.fileUtility.ExcelUtility;
 import com.comcast.crm.generic.fileUtility.FileUtility;
 import com.comcast.crm.generic.weddriverUtility.JavaUtility;
@@ -79,9 +81,9 @@ public class DeleteOrganizationTest
 				System.out.println(orgname +" is created===>pass");
 			} else {
 				System.out.println(orgname +" is not created===>fail");
-				
-				
+					
 			}
+			
 			
 			//verify header orgname info expectedResult
 			String HeaderOrgInfo=driver.findElement(By.id("dtlview_Organization Name")).getText();
@@ -90,6 +92,22 @@ public class DeleteOrganizationTest
 			} else {
 				System.out.println(orgname +" is not created===>fail");
 			}
+			
+			//go back to organization Page
+			HomePage hp=new HomePage(driver);
+			hp.getOrgLink().click();
+			
+			//search for Organization
+			OrganizationPage op=new OrganizationPage(driver);
+			op.getSearchBar().sendKeys(orgname);
+			wLib.select(op.getSearchDD(), "Organization Name");
+			op.getSearchBtn().click();
+			
+			//in dynamic table select org and delete
+			
+			driver.findElement(By.xpath("//a[text()='"+orgname+"']/../../td[8]/a[text()='del']")).click();
+			wLib.switchToAlertAndAccept(driver);
+			
 			
 			//Step:5 logout
 			wLib.mousemoveonElement(driver, driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']")));

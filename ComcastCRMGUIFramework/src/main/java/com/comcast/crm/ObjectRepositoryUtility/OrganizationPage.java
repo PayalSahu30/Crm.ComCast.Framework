@@ -24,6 +24,13 @@ public class OrganizationPage {
 	@FindBy(name="search_text")
 	private WebElement SearchBar;
 	
+	@FindBy(name="search_field")
+	private WebElement SearchDD;
+	
+	public WebElement getSearchDD() {
+		return SearchDD;
+	}
+
 	@FindBy(linkText="Organization Name")
 	private WebElement OrgTypeDD;
 	
