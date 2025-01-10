@@ -32,7 +32,7 @@ public class ExcelUtility {
  {
 	 FileInputStream fis =new FileInputStream("./testData/TS_PracticeData.xlsx");
 		Workbook wb= WorkbookFactory.create(fis);
-		wb.getSheet(sheetname).getRow(rownum).createCell(cellnum);
+		wb.getSheet(sheetname).getRow(rownum).createCell(cellnum).setCellValue(data);
 		
 		FileOutputStream fos=new FileOutputStream("./testData/TS_PracticeData.xlsx");
 		wb.write(fos);

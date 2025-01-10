@@ -82,7 +82,7 @@ public class CreateOrganizationTest {
 			//Step:4 Enter detail and create new organization
 			driver.findElement(By.name("accountname")).sendKeys(orgname);
 			driver.findElement(By.xpath("//input[@title=\"Save [Alt+S]\"]")).click();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			
 			//verify the header massage expected Result
 			String HeaderInfo=driver.findElement(By.xpath("//span[@class='dvHeaderText']")).getText();

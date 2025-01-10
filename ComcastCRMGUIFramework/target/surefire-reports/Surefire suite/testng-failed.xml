@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="5" name="Surefire test(failed)" verbose="0">
+    <classes>
+      <class name="practice.testng.CreateContact_DP_XLS_Test">
+        <methods>
+          <include name="getproductInfoTest" invocation-numbers="0 1 2"/>
+        </methods>
+      </class> <!-- practice.testng.CreateContact_DP_XLS_Test -->
+      <class name="practice.testng.ListenerTest">
+        <methods>
+          <include name="configBC"/>
+          <include name="configBS"/>
+          <include name="CreateInvoiceTest"/>
+          <include name="configAC"/>
+          <include name="configAS"/>
+          <include name="configBM"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- practice.testng.ListenerTest -->
+      <class name="com.comcast.crm.orgTest.OrganizationTest">
+        <methods>
+          <include name="CreateOrgWithIndustryNType"/>
+          <include name="configBC"/>
+          <include name="configBS"/>
+          <include name="configAC"/>
+          <include name="configAS"/>
+          <include name="configBM"/>
+          <include name="CreateOrganizationWithPhoneNumber"/>
+          <include name="configAM"/>
+        </methods>
+      </class> <!-- com.comcast.crm.orgTest.OrganizationTest -->
+      <class name="practice.testng.ContactTestTest">
+        <methods>
+          <include name="createContactTestTest"/>
+        </methods>
+      </class> <!-- practice.testng.ContactTestTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

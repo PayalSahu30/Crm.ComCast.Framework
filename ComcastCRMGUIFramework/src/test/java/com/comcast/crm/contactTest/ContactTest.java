@@ -1,6 +1,7 @@
 package com.comcast.crm.contactTest;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import org.openqa.selenium.By;
@@ -15,6 +16,7 @@ import com.comcast.crm.ObjectRepositoryUtility.HomePage;
 import com.comcast.crm.ObjectRepositoryUtility.OrganizationPage;
 import com.comcast.crm.generic.weddriverUtility.ClassObjectUtility;
 
+@Listeners(com.comcast.crm.ListenerUtility.ListenerImplementationClass.class)
 public class ContactTest extends BaseClass {
 	@Test(groups="smoketest")
 	public void CreateContactTest() throws Throwable {
@@ -97,7 +99,7 @@ public class ContactTest extends BaseClass {
 	public void createContactWithOrg() throws Throwable 
 	{
 		//read testScript data from excel file
-		String orgname= eLib.getDataFromExcel("contact", 7, 2)+ jLib.getRandomNumber();		
+		String orgname= eLib.getDataFromExcel("contact", 7, 2) + jLib.getRandomNumber();		
 		String contactLastName= eLib.getDataFromExcel("contact", 7, 3);	
 		
 		

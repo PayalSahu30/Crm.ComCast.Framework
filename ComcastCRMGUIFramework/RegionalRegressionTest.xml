@@ -8,7 +8,7 @@
 			<include name="CreateOrgTest"></include>
 		</methods>
 	  </class>
-      <class name="com.comcast.crm.contactTest.ContactTest_">
+      <class name="com.comcast.crm.contactTest.ContactTest">
       <methods>
 			<include name="createContactWithOrg"></include>
 		</methods>

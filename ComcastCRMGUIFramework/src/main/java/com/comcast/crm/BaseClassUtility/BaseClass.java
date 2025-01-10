@@ -45,8 +45,11 @@ public class BaseClass
 	public void configBC() throws Throwable
 	{
 		System.out.println("==Launch Browser==");
-		String Browser=fLib.getDataFromPropertiesFile("browser");
-		
+//		Data from property file
+//		String Browser=fLib.getDataFromPropertiesFile("browser");
+	
+//		data from commandline---- if cmd is null then property file
+		String Browser=  System.getProperty("browser",fLib.getDataFromPropertiesFile("browser"));
 		
 		if(Browser.equals("chrome"))
 		{
@@ -101,10 +104,22 @@ public class BaseClass
 	{
 		System.out.println("==Login==");
 		LoginPage lp=new LoginPage(driver);
+//		Data from property file
+//		String URL=fLib.getDataFromPropertiesFile("url");
+//		String USERNAME=fLib.getDataFromPropertiesFile("username");
+//		String PASSWORD=fLib.getDataFromPropertiesFile("password");
+//		
 		
-		String URL=fLib.getDataFromPropertiesFile("url");
-		String USERNAME=fLib.getDataFromPropertiesFile("username");
-		String PASSWORD=fLib.getDataFromPropertiesFile("password");
+//		data from commandline
+//		String URL=System.getProperty("url");
+//		String USERNAME=System.getProperty("username");
+//		String PASSWORD=System.getProperty("password");
+//		
+		// if data from commandline is null then automatically take data from Propertyfile
+		String URL=System.getProperty("url",fLib.getDataFromPropertiesFile("url"));
+		String USERNAME=System.getProperty("username",fLib.getDataFromPropertiesFile("username"));
+		String PASSWORD=System.getProperty("password",fLib.getDataFromPropertiesFile("password"));
+		
 		lp.LoginToApp(URL,USERNAME,PASSWORD);
 	}
 	
